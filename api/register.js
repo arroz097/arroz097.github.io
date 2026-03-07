@@ -5,14 +5,14 @@ module.exports = (req, res) => {
     const ip = req.headers['x-forwarded-for'] || "IP Local";
     const navegador = req.headers['user-agent'];
 
+    console.log(`NOVA VENDA REGISTRADA:
+    - Horário: ${dataHora}
+    - IP: ${ip}
+    - Navegador: ${navegador}`);
+
     res.status(200).json({
         "status": "comprado",
         "mensagem": "Le fishe au chocolat comprado!",
-        "detalhes da compra": {
-            "horario": dataHora,
-            "origem": ip,
-            "navegador": navegador,
-            // "versao_sistema": "1.0.0-beta"
-        },
+        "detalhes": { "horario": dataHora, "origem": ip }
     });
 };
