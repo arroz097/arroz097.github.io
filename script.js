@@ -2,6 +2,9 @@ const buyButton = document.getElementById("buyID")
 const lefisheSound = new Audio('assets/le_fishe.mp3')
 
 buyButton.addEventListener("click", async function () {
+    lefisheSound.play()
+    buyButton.remove()
+
     try {
         const reposta = await fetch('/api/register', {
             method: 'POST',
@@ -9,9 +12,6 @@ buyButton.addEventListener("click", async function () {
         })
 
         const dados = await reposta.json()
-
-        lefisheSound.play()
-        buyButton.remove()
 
     } catch (error) {
         console.error("erro na conexão: ", error)
