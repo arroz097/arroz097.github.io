@@ -1,12 +1,16 @@
 body {
     background-color: rgb(21, 20, 20);
     color: white;
-    font-family: sans-serif;
+    font-family: "Source Code Pro", serif;
 
 }
 
 h1 {
     text-align: center;
+}
+
+img {
+    pointer-events: none;
 }
 
 p {
@@ -17,6 +21,17 @@ p {
 
 .buttonArea {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 35px;
+}
 
+.imageContainer {
+    position: relative;
+}
+
+.fishImage {
+    display: block; /* Images are inline by default, change to block */
+    margin-left: auto; /* Distribute available left margin automatically */
+    margin-right: auto; /* Distribute available right margin automatically */
+    /* Optional: Define a width if the image is wider than desired */
+    width: 50%;
 }
