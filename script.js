@@ -10,8 +10,8 @@ const lefisheSound = new Audio('assets/le_fishe.mp3')
 const fishText = document.getElementById("fish-text")
 const fishImage = document.getElementById("chocolateFish")
 
-fishText.style.visibility = "hidden"
-fishImage.style.opacity = 0
+// fishText.style.visibility = "hidden"
+// fishImage.style.opacity = 0
 
 function showTheFish() {
     let opacity = 0;
@@ -33,7 +33,7 @@ function showTheFish() {
 }
 
 buyButton.addEventListener("click", async function () {
-    lefisheSound.play()
+    await lefisheSound.play()
     buyButton.remove()
 
     fishText.style.visibility = "visible"
