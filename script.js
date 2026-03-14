@@ -7,6 +7,7 @@ const lefisheSound = new Audio('assets/le_fishe.mp3')
 // e aparentemente javascript é single thread e nao possui sleeps/wait
 // entao é focado em assincronia
 
+const fishParagraph = document.querySelector("p")
 const fishText = document.getElementById("fish-text")
 const fishImage = document.getElementById("chocolateFish")
 
@@ -37,6 +38,17 @@ buyButton.addEventListener("click", async function () {
     buyButton.remove()
 
     fishText.style.visibility = "visible"
+    fishParagraph.textContent = "le"
+
+    setTimeout(() => {
+        fishParagraph.textContent = "le fish"
+        setTimeout(() => {
+            fishParagraph.textContent = "le fish au"
+            setTimeout(() => {
+                fishParagraph.textContent = "le fish au chocolat"
+            }, 300)
+        }, 600)
+    }, 300)
 
     // equivalente ao task.delay
     setTimeout(() => {

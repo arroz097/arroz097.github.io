@@ -1,11 +1,14 @@
 module.exports = (req, res) => {
+    // req = request
+    // res = response
+
     const dataHora = new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" });
 
     // || significa or
     const ip = req.headers['x-forwarded-for'] || "IP Local";
     const navegador = req.headers['user-agent'];
 
-    console.log(`NOVO PEIXE REGISTRADO:
+    console.log(`NOVO PEIXE:
     - Horário: ${dataHora}
     - IP: ${ip}
     - Navegador: ${navegador}`);
